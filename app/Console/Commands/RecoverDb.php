@@ -41,14 +41,14 @@ class RecoverDb extends Command
     {
         $file = base_path().'/mock_data.json';
         if(File::exists($file)) {
-            collect(json_decode(File::get($file)))->each(function($compagny) {
-                Compagny::firstOrCreate(
+            collect(json_decode(File::get($file), true))->each(function($compagny) {
+                Compagny::with('results')->firstOrCreate(
                     [
-                        'name' => $compagny->name,
-                        'sector' => $compagny->sector,
-                        'siren' => $compagny->siren
+                        'name' => $compagny['name'],
+                        'sector' => $compagny['sector'],
+                        'siren' => $compagny['siren']
                     ]
-                );
+                )->results()->createMany($compagny['results']);
             });
 
         } else {

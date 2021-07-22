@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Relationships\CompagnyRelationships;
 
-class Compagny extends Model
+class Result extends Model
 {
     use HasFactory;
-    use CompagnyRelationships;
 
     protected $fillable = [
-        'name',
-        'sector',
-        'siren'
+        'ca',
+        'margin',
+        'ebitda',
+        'loss',
+        'year'
     ];
 }
