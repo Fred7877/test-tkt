@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CompagnyController;
+use App\Http\Controllers\Api\CompagnyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +14,6 @@ use App\Http\Controllers\CompagnyController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 Route::get('compagnies/{paginate?}', [CompagnyController::class, 'index'])->name('compagnies.index');
 Route::resource('compagnies', CompagnyController::class)->except(['index']);

@@ -16,7 +16,7 @@ class CompagnyController extends Controller
      */
     public function index($numberElement = 15)
     {
-        return Compagny::paginate($numberElement);
+        return Compagny::all();
     }
 
     /**

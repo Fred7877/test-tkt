@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Models\Compagny;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Route;
 
 class CompagnyController extends Controller
 {
@@ -18,8 +17,7 @@ class CompagnyController extends Controller
      */
     public function index($numberElement = 15)
     {
-        $compagnies = Http::get(Config::get('api.url_api'));
-        return Compagny::paginate($numberElement);
+        return view('app');
     }
 
     /**

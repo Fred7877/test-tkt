@@ -16,4 +16,6 @@ class Compagny extends Model
         'sector',
         'siren'
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
 }
