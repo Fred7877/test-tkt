@@ -20,4 +20,18 @@ class CommandRecoverDbTest extends TestCase
         $this->artisan('recover:db');
         $this->assertTrue(Compagny::count() > 1, Compagny::count());
     }
+
+    /**
+     * A basic unit test example.
+     *
+     * @return void
+     */
+    public function test_can_get_results_compagny()
+    {
+        $this->artisan('recover:db');
+        $this->assertTrue(
+            Compagny::with('results')->first()->count() > 1,
+            Compagny::with('results')->first()->count()
+        );
+    }
 }
