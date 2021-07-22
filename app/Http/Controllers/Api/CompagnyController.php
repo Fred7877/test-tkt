@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Models\Compagny;
+use App\Http\Controllers\Controller;
 
 class CompagnyController extends Controller
 {
