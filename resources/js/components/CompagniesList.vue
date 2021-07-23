@@ -38,7 +38,7 @@
             :items="compagnies">
 
             <template #cell(actions)="row">
-                <b-button size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
+                <b-button pill variant="outline-info" size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
                     Détails
                 </b-button>
             </template>
