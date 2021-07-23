@@ -16,4 +16,6 @@ class Result extends Model
         'loss',
         'year'
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
 }

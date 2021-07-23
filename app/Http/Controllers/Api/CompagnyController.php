@@ -9,12 +9,11 @@ use App\Http\Controllers\Controller;
 class CompagnyController extends Controller
 {
     /**
-     * Get the of compagnies paginated.
-     * number of element is 15 by default.
+     * Get all compagnies.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($numberElement = 15)
+    public function index()
     {
         return Compagny::all();
     }
@@ -41,14 +40,14 @@ class CompagnyController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display a specific compagny with result.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Compagny $compagny)
     {
-        //
+        return $compagny->load('results');
     }
 
     /**
