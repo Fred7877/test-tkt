@@ -1,12 +1,14 @@
 # Installation
-###### Start the docker
-`./vendor/bin/sail up -d`
+`make install`
+- copy .env.example to .env
+- build the docker
+- run the docker
+- execute composer install into the docker
+- execute php artisan migrate into the docker
+- execute php artisan recover:db into the docker
 
-###### fill the database with the file mock_data.json
-`php artisan recover:db`
+##### Start the docker
+`make start`
 
-###### Compilation and install packages JS
-`./vendor/bin/sail npm install && npm run dev`
-
-###### Run test
-`./vendor/bin/sail php artisan test`
+##### Stop th docker
+`make stop`
