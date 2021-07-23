@@ -3,11 +3,14 @@
 install:
 	cp .env.example .env
 	docker-compose build
-	docker-compose run --no-deps --rm test-tkt_laravel.test_1 composer install
+	docker-compose up -d
+	docker-compose run --no-deps --rm phpfpm composer install
+	docker-compose run --no-deps --rm phpfpm php artisan migrate
+	docker-compose run --no-deps --rm phpfpm php artisan recover:db
+	docker-compose run --no-deps --rm phpfpm php artisan key:generate
 
 start:
 	docker-compose up -d
-	docker-compose exec -d wihp_app symfony server:start
 
 stop:
 	docker-compose down
