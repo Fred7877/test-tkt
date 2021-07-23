@@ -1,6 +1,6 @@
 <template>
 
-    <div class="overflow-auto mt-5">
+    <div class=" mt-5">
         <h1 class="mb-5"> Liste des compagnies </h1>
 
          <b-form-group
