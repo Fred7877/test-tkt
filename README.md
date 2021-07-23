@@ -10,5 +10,8 @@
 ##### Start the docker
 `make start`
 
-##### Stop th docker
+##### Stop the docker
 `make stop`
+
+##### Run tests
+`make tests`
