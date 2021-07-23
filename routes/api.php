@@ -15,9 +15,5 @@ use App\Http\Controllers\Api\CompagnyController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('compagnies/{paginate?}', [CompagnyController::class, 'index'])->name('compagnies.index');
 Route::resource('compagnies', CompagnyController::class)->except(['index']);
