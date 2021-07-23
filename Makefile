@@ -1,4 +1,4 @@
-.PHONY: install start stop
+.PHONY: install start stop tests
 
 install:
 	cp .env.example .env
@@ -14,3 +14,6 @@ start:
 
 stop:
 	docker-compose down
+
+tests:
+	docker-compose run --no-deps --rm phpfpm php artisan test
