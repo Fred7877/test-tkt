@@ -14,7 +14,7 @@ class CompagniesTest extends TestCase
      *
      * @return void
      */
-    public function test_compagnies_list_paginate()
+    public function test_compagnies_list()
     {
         $response = $this->get('/compagnies');
 
