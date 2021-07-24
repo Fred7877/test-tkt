@@ -13,5 +13,12 @@
 ##### Stop the docker
 `make stop`
 
+##### Documentation API
+generate the documentation
+`php artisan scribe:generate`
+See the documentation :
+(set APP_URL in .env)
+[BASE_URL]/docs/index.html
+
 ##### Run tests
 `make tests`
