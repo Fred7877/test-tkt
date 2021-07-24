@@ -8,6 +8,7 @@ install:
 	docker-compose run --no-deps --rm phpfpm php artisan migrate:fresh
 	docker-compose run --no-deps --rm phpfpm php artisan recover:db
 	docker-compose run --no-deps --rm phpfpm php artisan key:generate
+	docker-compose run --no-deps --rm phpfpm php artisan scribe:generate
 	docker-compose run --no-deps --rm phpfpm npm install && npm run dev
 
 start:
