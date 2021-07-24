@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import CompagniesList from '@/js/components/CompagniesList'
-import ExampleComponent from '@/js/components/ExampleComponent'
 
 Vue.use(VueRouter);
 
@@ -15,8 +14,8 @@ const router = new VueRouter({
         },
         {
             path: '/',
-            name: 'example',
-            component: ExampleComponent
+            name: 'compagnies',
+            component: CompagniesList
         }
     ]
 });
